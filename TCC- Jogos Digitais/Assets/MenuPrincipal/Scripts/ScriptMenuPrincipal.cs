@@ -63,6 +63,7 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         btnSairConfirma = btnSairConfirma.GetComponent<Button>();
         btnSairDesiste = btnSairDesiste.GetComponent<Button>();
     }
+    void Update() {}
 
     public void pressionaBtnVoltar() {
         menuPrincipal.enabled = true;
@@ -71,7 +72,6 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = false;
     }
-
     public void pressionaBtnComecar() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = true;
@@ -79,7 +79,15 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = false;
     }
-
+    public void pressionaBtnAvancandoComOResto() {
+        Application.LoadLevel (1);    
+    }
+    public void pressionaBtnCorridaDeMenos() {
+        Application.LoadLevel (2);
+    }
+    public void pressionaBtnJogoDaTartaruga() {
+        Application.LoadLevel (3);
+    }
     public void pressionaBtnOpcoes() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = false;
@@ -87,7 +95,6 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = false;
     }
-
     public void pressionaBtnCreditos() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = false;
@@ -95,7 +102,6 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = true;
         menuSaida.enabled = false;
     }
-   
     public void pressionaBtnSair() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = false;
@@ -103,11 +109,9 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = true;
     }
-
     public void pressionaSairConfirma() {
         Application.Quit();
     }
-
     public void pressionaSairDesiste() {
         menuPrincipal.enabled = true;
         menuJogos.enabled = false;
@@ -115,5 +119,4 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = false;
     }
-
 }
