@@ -7,6 +7,8 @@ using System.Collections;
 
 public class ScriptMenuPrincipal : MonoBehaviour {
 
+    public Texture2D spriteCursor;
+
     public Canvas menuPrincipal;
     public Canvas menuJogos;
     public Canvas menuOpcoes;
@@ -37,6 +39,8 @@ public class ScriptMenuPrincipal : MonoBehaviour {
     // Use isso na inicialização
     void Start () {
        
+
+   
         menuPrincipal = menuPrincipal.GetComponent<Canvas>();
         menuJogos = menuJogos.GetComponent<Canvas>();
         menuOpcoes = menuOpcoes.GetComponent<Canvas>();
