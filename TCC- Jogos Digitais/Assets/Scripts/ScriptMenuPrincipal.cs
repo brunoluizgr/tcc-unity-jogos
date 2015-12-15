@@ -13,6 +13,7 @@ public class ScriptMenuPrincipal : MonoBehaviour {
     public Canvas menuCreditos;
     public Canvas menuSaida;
 
+
     // Botões do Menu Principal
     public Button btnComecar;
     public Button btnOpcoes;
@@ -42,8 +43,8 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos = menuCreditos.GetComponent<Canvas>();
         menuSaida = menuSaida.GetComponent<Canvas>();
 
-        /* Desabilita os menus para interações com o jogador */
         menuPrincipal.enabled = true;
+        /* Desabilita os menus-secundarios para interações com o jogador */
         menuJogos.enabled = false;
         menuOpcoes.enabled = false;
         menuCreditos.enabled = false;
@@ -60,11 +61,12 @@ public class ScriptMenuPrincipal : MonoBehaviour {
 
         btnCreditos = btnCreditos.GetComponent<Button>();
         btnSair = btnSair.GetComponent<Button>();
-        btnSairConfirma = btnSairConfirma.GetComponent<Button>();
-        btnSairDesiste = btnSairDesiste.GetComponent<Button>();
+            btnSairConfirma = btnSairConfirma.GetComponent<Button>();
+            btnSairDesiste = btnSairDesiste.GetComponent<Button>();
     }
     void Update() {}
 
+    // Voltar
     public void pressionaBtnVoltar() {
         menuPrincipal.enabled = true;
         menuJogos.enabled = false;
@@ -72,6 +74,8 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = false;
     }
+
+    // Começar - abre o menu dos Jogos
     public void pressionaBtnComecar() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = true;
@@ -79,15 +83,23 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = false;
     }
+
+    // Seleção de Leveis - Botão Avançando com o Resto
     public void pressionaBtnAvancandoComOResto() {
         Application.LoadLevel (1);    
     }
+
+    // Seleção de Leveis - Botão Corrida de Menos
     public void pressionaBtnCorridaDeMenos() {
         Application.LoadLevel (2);
     }
+
+    // Seleção de Leveis - Botão Jogo da Tartaruga
     public void pressionaBtnJogoDaTartaruga() {
         Application.LoadLevel (3);
     }
+
+    // Botão Opções
     public void pressionaBtnOpcoes() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = false;
@@ -95,6 +107,8 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = false;
     }
+
+    // Botão Créditos
     public void pressionaBtnCreditos() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = false;
@@ -102,6 +116,8 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = true;
         menuSaida.enabled = false;
     }
+
+    // Botão Sair
     public void pressionaBtnSair() {
         menuPrincipal.enabled = false;
         menuJogos.enabled = false;
@@ -109,9 +125,14 @@ public class ScriptMenuPrincipal : MonoBehaviour {
         menuCreditos.enabled = false;
         menuSaida.enabled = true;
     }
+
+    // Botão Sair - Sim
     public void pressionaSairConfirma() {
         Application.Quit();
+        Application.OpenURL("http://tcc.brunoluizgr.com");
     }
+
+    // Botão Sair - Não
     public void pressionaSairDesiste() {
         menuPrincipal.enabled = true;
         menuJogos.enabled = false;
